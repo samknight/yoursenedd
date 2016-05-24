@@ -1,0 +1,21 @@
+#assembly {
+  background: #FFF;
+	box-shadow: 0 0 3px #ddd;
+  padding: 1em;
+
+  h2 {
+  	border-bottom: 1px solid #ccc;
+  	color: #444;
+  	font-size: 0.85em;
+  	margin: 0 0 1.2em 0;
+  	text-transform: uppercase;
+  }
+
+	ul {
+    list-style: none;
+
+    li {
+			margin: 0 0 0.8em 0;
+		}
+  }
+}

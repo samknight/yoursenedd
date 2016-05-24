@@ -1,0 +1,11 @@
+<% title "#{@debate.name} – #{@debate.log_date} | Your Senedd" %>
+
+<article id="debate">
+  <%= render_component 'debate_header', DebateHeaderPresenter.new(@debate).properties %>
+
+  <section id="speeches">
+    <% @debate.speeches.each do |speech| %>
+      <%= render_component('speech', SpeechPresenter.new(speech).properties) %>
+    <% end %>
+  </section>
+</article>

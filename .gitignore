@@ -1,0 +1,10 @@
+.bundle
+.ruby-version
+db/*.sqlite3
+log/*.log
+tmp/
+tmp/**/*
+.sass-cache/
+.sass-cache/**/*
+config/database.yml
+.env

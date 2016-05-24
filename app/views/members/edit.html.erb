@@ -1,0 +1,21 @@
+<%= form_for @member do |f| %>
+  <div class="field">
+    <%= f.label :forename %>
+    <%= f.text_field :forename %>
+  </div>
+  <div class="field">
+    <%= f.label :surname %>
+    <%= f.text_field :surname %>
+  </div>
+  <div class="field">
+    <%= f.label :external_id %>
+    <%= f.text_field :external_id %>
+  </div>
+  <div class="field">
+    <%= f.label :photo %>
+    <%= f.attachment_field :photo %>
+  </div>
+  <div class="field">
+    <%= f.submit %>
+  </div>
+<% end %>

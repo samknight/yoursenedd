@@ -1,0 +1,11 @@
+.subscribe_alert {
+	background: #63C030;
+	color: #FFF;
+	padding: 15px 20px;
+	text-align: center;
+}
+
+.subscribe_alert a {
+	color: #fff;
+	text-decoration: underline;
+}

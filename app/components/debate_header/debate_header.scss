@@ -1,0 +1,35 @@
+//= require fonts
+//= require layout
+//= require clearfix
+
+.debate-header--title { font-weight: bold; }
+.debate-header--date {
+  border-bottom: 1px solid #ccc;
+  color: #444;
+  font-size: 0.85em;
+  text-transform: uppercase;
+}
+
+.debate-header--date {
+  border-bottom: 1px solid #bbb;
+  margin-bottom: 1em;
+}
+
+.debate-header--speakers--number {
+  font-size: 0.8em;
+  padding: 5px 0;
+}
+
+.debate-header--speakers--list {}
+
+.debate-header--speakers--list--speaker {
+  display: inline;
+
+    img {
+      width: 50px;
+    }
+}
+
+.hidden {
+  display: none;
+}

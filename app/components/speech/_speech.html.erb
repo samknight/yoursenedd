@@ -1,0 +1,13 @@
+<article class="speech <%= cycle('even', 'odd') %>" id="<%= properties[:id] %>">
+	<div class="speech--sidebar">
+		<ul>
+			<li><%= link_to image_tag(properties[:avatar]), properties[:member_link], :class => "speech--sidebar-avatar" %></li>
+	  	<li><%= link_to 'Link to this', properties[:speech_link], class: 'speech--sidebar-link' %></li>
+		</ul>
+	</div>
+	<div class="speech--content">
+		<h3 class="speech--content-header"><%= link_to properties[:name], properties[:member_link] %></h3>
+		<p class="speech--content-body"><%= simple_format(properties[:body]) %></p>
+	</div>
+	<div style="clear:both"></div>
+</article>

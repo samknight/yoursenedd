@@ -1,0 +1,15 @@
+<% title "Recent debates from the Welsh Assembly | Your Senedd" %>
+
+<section id="debates">
+  <h1>Recent Debates</h1>
+  <% @debates_days.each do |day, debates| %>
+    <div id="<%= day.to_s %>" class="debate">
+      <h2><%= day.to_s(:long) %></h2>
+      <ul>
+      <% debates.each do |debate| %>
+        <li><%= link_to debate.name, debate %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+</section>

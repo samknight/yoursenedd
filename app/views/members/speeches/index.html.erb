@@ -1,0 +1,90 @@
+<!--
+<div id="ys-wrapper">
+</div>
+
+<script>
+  function yourSeneddWidget(url, callback)
+  {
+      var xmlHttp = new XMLHttpRequest();
+      xmlHttp.onreadystatechange = function() {
+          if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
+              callback(xmlHttp.responseText);
+      }
+      xmlHttp.open("GET", url, true);
+      xmlHttp.send();
+  }
+
+  yourSeneddWidget('http://127.0.0.1:3000/members/182/speeches?uuid=abc123', function(data){
+    document.getElementById('ys-wrapper').innerHTML = data
+  });
+</script>
+ -->
+<style>
+  #ys, #ys * {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    font-family: arial;
+  }
+
+  #ys {
+    background: #b7005d;
+    padding: 5px;
+  }
+
+  #ys .ys-header {
+    height: 60px;
+  }
+
+  #ys .ys-member {
+    padding: 5px;
+  }
+
+  #ys .ys-member__name {
+    color: #FFF;
+    font-size: 18px;
+  }
+
+  #ys .ys-member__tagline {
+    color: #DDD;
+  }
+
+  #ys .ys-speeches {
+    background: #FFF;
+  }
+
+  #ys .ys-speech {
+    color: #333;
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+  }
+
+  #ys .ys-speech__date {
+    color: #999;
+  }
+
+  #ys .ys-speech:hover{
+    background: #EAB;
+  }
+</style>
+<div id="ys">
+  <div class="ys-header">
+    <a href="http://yoursenedd.com">
+      <%= image_tag image_url('senedd-logo.png'), width: 80, style: 'float: left;' %>
+    </a>
+    <div class="ys-member">
+      <h1 class="ys-member__name"><%= @member.name %> AM</h1>
+      <span class="ys-member__tagline">Latest speeches</span>
+    </div>
+  </div>
+  <div class="ys-speeches">
+    <% @speeches.each do |speech| %>
+      <%= link_to debate_path(speech.debate), class: 'ys-speech' do %>
+        <h1 class="ys-speech__title"><%= speech.debate.name %></h1>
+        <span class="ys-speech__date"><%= speech.log_date.to_s(:long) %></span>
+        <p class="ys-speech__body"><%= speech.content.truncate(140) %></p>
+      <% end %>
+    <% end %>
+  </div>
+</div>

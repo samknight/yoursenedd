@@ -1,0 +1,71 @@
+@media only screen and (max-width: 1050px) {
+  #search {
+    margin-left: 40px;
+  }
+}
+
+@media only screen and (max-width: 999px) {
+
+  #strip {
+    display:none;
+  }
+
+	body {
+		background: #fff;
+	}
+  
+  #feature {
+    display:none;
+  }
+  
+  #recent-debates, #main, .container, #footer, article#members, #member-profile, #member-timeline, #debate {
+		box-shadow: none !important;
+    width: 96% !important;
+    padding: 0px !important;
+    margin: 0px !important;
+  }
+
+	#member-profile {
+		width: 100% !important;
+		margin: 1em 0 !important;
+
+		.profile-picture {
+			float: left;
+			margin: 0 1em 0 0 !important;
+			width: 100px !important;
+		}
+	}
+
+	#main {
+		background: #fff;
+		padding: 0 2% !important;
+	}
+
+  div.speech-content {
+    width: 74%;
+  }
+
+	#footer {
+		padding: 1em 2% !important;
+		span {
+			display: block;
+		}
+	}
+
+}
+
+@media only screen and (max-width: 499px) {
+
+	#speakers {
+	  display: none;
+	}
+
+	div.speech-content {
+		padding: 0 2%;
+	  width: 96%;
+	}
+
+	.profile-picture {
+	  display: none;
+	}
+}

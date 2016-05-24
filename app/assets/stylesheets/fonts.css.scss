@@ -1,0 +1,46 @@
+@import 'colors';
+
+body {
+
+	font-family: Arial, Verdana, sans-serif;
+	font-weight:400;
+	line-height: 1.2em;
+}
+
+h1, h2, h3, h4, h5, h6 { line-height:1.4em; color: $purple; }
+h1 { font-size: 1.6em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.4em; }
+h4 { font-size: 1.3em; }
+h5 { font-size: 1.2em; }
+h5 { font-size: 1.1em; }
+
+a {
+	color: $purple;
+}
+
+p {
+	font-size:1em;
+	line-height:1.4em;
+	margin: 10px 0;
+}
+
+small { font-size:0.8em; }
+big { font-size:1.2em; }
+strong { font-weight:bold; }
+em { font-style:italic; }
+
+blockquote {
+	color:#555;
+	border-left:4px solid #b43;
+	font-family:Georgia, Times, Serif;
+	font-size:1.2em;
+	padding-left:1em;
+	margin-left:1em;
+}
+
+cite {
+	color:inherit;
+	font-family:Georgia, Times, Serif;
+	font-size:0.7em;
+}

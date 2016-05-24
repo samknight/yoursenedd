@@ -1,0 +1,37 @@
+<% title "Advertising | Your Senedd" %>
+
+<section id="debates">
+  <h1>Advertise with Your Senedd</h1>
+  <div class="notice">
+    <%= flash[:notice] %>
+  </div>
+  <p>Your Senedd is creating highly engaging information between the website and <a href="/weekly">weekly newsletter</a>.</p>
+  <p>Among our subscribers are CEOs of charities and private sector organisations as well as politicians and those who make change in Wales. By advertising your campaign, organisation or job with us you'll be attratcing the attention of the right people.</p>
+  <p>Our website receives over 7,500 unique visitors and our email excels way above other newsletters with an open rate of 46% and click rate of 11%</p>
+  <p><b>Start advertising with us for a whole month (website and ~3 newsletters) for just £20</b></p>
+
+  <div class="error">
+    <%= flash[:alert] %>
+  </div>
+  <%= form_for @message, url: send_advertising_path do |message_form| %>
+    <fieldset>
+      <div class="field">
+        <%= message_form.text_field :name, placeholder: "Name" %>
+      </div>
+
+      <div class="field">
+        <%= message_form.email_field :email, placeholder: "Email"%>
+      </div>
+
+      <div class="field">
+        <%= message_form.text_area :content, placeholder: "Message"%>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <div class="field">
+        <%= message_form.submit "Send" %>
+      </div>
+    </fieldset>
+  <% end %>
+</section>

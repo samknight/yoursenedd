@@ -1,0 +1,109 @@
+#member {
+
+	#member-profile {
+		float: left;
+		margin-right: 1em;
+		padding: 1em 0;
+		width: 200px;
+
+		h1 {
+			font-weight: bold;
+		}
+
+		.profile-picture {
+			border:3px solid #e2e2e2;
+			margin:5px 0;
+			width:190px;
+		}
+
+	}
+
+	#member-timeline {
+		background: #fff;
+		box-shadow: 0 0 3px #ddd;
+		float: left;
+		padding: 1em;
+		width: 758px;
+
+		h1 {
+			font-weight: bold;
+			margin-bottom: 0.4em;
+		}
+
+		#recent-speeches {
+			.debate {
+				font-size: 0.9em;
+				margin-bottom: 20px;
+
+				h4 {
+					border-bottom: 1px solid #ccc;
+					color: #444;
+					font-size: 0.85em;
+					margin: 0 0 0.8em 0;
+					text-transform: uppercase;
+
+					a {
+						text-transform: none;
+					}
+				}
+
+				.speech {
+					margin-bottom: 0.8em;
+
+					.read-more {
+						font-size: 0.85em;
+					}
+				}
+			}
+		}
+
+		#history {
+			ol {
+				font-size: 0.85em;
+				list-style: none;
+
+				.history-item {
+					.date {
+						font-weight: bold;
+					}
+				}
+			}
+		}
+	}
+}
+
+#member-speeches {
+	background: #fff;
+	box-shadow: 0 0 3px #ddd;
+	padding: 1em;
+
+	h1 {
+		font-weight: bold;
+		margin-bottom: 0.8em;
+	}
+	.debate {
+		font-size: 0.9em;
+		margin-bottom: 20px;
+
+		h4 {
+			border-bottom: 1px solid #ccc;
+			color: #444;
+			font-size: 0.85em;
+			margin: 0 0 0.8em 0;
+			text-transform: uppercase;
+
+			a {
+				text-transform: none;
+			}
+		}
+
+		.speech {
+			margin-bottom: 0.8em;
+			max-width: 50em;
+
+			.read-more {
+				font-size: 0.85em;
+			}
+		}
+	}
+}

@@ -1,0 +1,13 @@
+<% title "Elected Assembly Members | Your Senedd" %>
+
+<section id="debates">
+  <h1>Elected Assembly Members</h1>
+  <table>
+    <% @members.each do |member| %>
+      <tr class="<%= cycle('odd', 'even') %>">
+        <td><b><%= member.constituency.name %></b></td>
+        <td><%= link_to member.name, member_path(member.to_param) %></td>
+      </tr>
+    <% end %>
+  </table>
+</section>

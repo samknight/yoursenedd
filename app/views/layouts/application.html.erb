@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>
+      <%= yield :title %>
+    </title>
+    <link href="yoursenedd.ico" rel="shortcut icon" type="image/x-icon"></link>
+    <%= stylesheet_link_tag 'application' %>
+    <%= javascript_include_tag 'application' %>
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <%= render 'application/search' %>
+    <%= yield :head %>
+  </head>
+  <body>
+    <div class="clearfix" id="banner">
+      <div class="container">
+        <div id="logo">
+          <%= link_to image_tag('senedd-logo.png'), root_url %>
+        </div>
+        <nav class="clearfix" id="main-nav">
+          <ul class="clearfix">
+            <li>
+              <%= link_to 'Members', members_path %>
+            </li>
+            <li>
+              <%= link_to 'Debates', debates_path %>
+            </li>
+            <li>
+              <%= link_to 'Advertise', advertising_path %>
+            </li>
+            <li>
+              <%= link_to 'Bespoke Data', message_path %>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <%= render 'application/subscribe_alert' %>
+    <% if current_page?(root_url) %>
+      <section id="strip">
+        <div id="search">
+          <h1>I want to search for</h1>
+          <%= form_tag(search_index_path, :method => 'get') do |f| %>
+            <%= text_field_tag :q, nil, { :placeholder => 'e.g. economy, transport' } %>
+            <span class="tip">Hit &ldquo;Enter&rdquo; to search</span>
+          <% end %>
+        </div>
+      </section>
+    <% end %>
+    <div class="clearfix" id="main">
+      <%= yield %>
+    </div>
+    <% if Rails.env.production? %>
+      <%= render partial: 'application/analytics' %>
+    <% end %>
+    <footer id="footer">
+      <div class="container">
+        <div>
+          <span class="tagline">Your Senedd | The Home of Welsh Politics</span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

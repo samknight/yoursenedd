@@ -1,0 +1,38 @@
+<% title "Data Services | Your Senedd" %>
+
+<section id="debates">
+  <h1>Your Senedd Data Services</h1>
+  <div class="notice">
+    <%= flash[:notice] %>
+  </div>
+  <p>Your Senedd is committed to increasing the amount of free information accessible to the public allowing residents in Wales to know what is happening, hold elected politicians accountable and influence change.</p>
+  <p>We also recognise that there are many of institutions in Wales that find the information we provide helpful to their activities. Among our regular users are Assembly and Governmental staff, journalists, charities, public affairs companies and many more organisations.
+  If you're one of these organisations we know that data is helping you deliver your services to be the most helpful and allowing you to grow.</p>
+  <p>We can help you deliver even more and better services with customised data, not just from the assembly but any other bespoke information that you require.</p>
+  <p>Interested in growing your business with our bespoke data formatted just for you? Get in touch below.</p>
+
+  <div class="error">
+    <%= flash[:alert] %>
+  </div>
+  <%= form_for @message, url: send_message_path do |message_form| %>
+    <fieldset>
+      <div class="field">
+        <%= message_form.text_field :name, placeholder: "Name" %>
+      </div>
+
+      <div class="field">
+        <%= message_form.email_field :email, placeholder: "Email"%>
+      </div>
+
+      <div class="field">
+        <%= message_form.text_area :content, placeholder: "Message"%>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <div class="field">
+        <%= message_form.submit "Send" %>
+      </div>
+    </fieldset>
+  <% end %>
+</section>

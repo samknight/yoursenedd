@@ -1,0 +1,55 @@
+//= require fonts
+//= require layout
+//= require clearfix
+
+.speech:nth-child(odd),
+.odd {
+  background: #eee;
+}
+.speech:nth-child(even),
+.even {
+  background: #fefefe;
+}
+
+.speech--content {
+  float: left;
+  padding: 10px;
+  width: 75%;
+}
+
+.speech--content-header {
+  font-size: 1em;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.speech--content-body {
+  margin-bottom: 0.8em;
+  max-width: 40em;
+}
+
+.speech--sidebar {
+  float: left;
+  margin-top: 22px;
+  padding: 0 10px 10px 10px;
+  width: 20%;
+
+  ul {
+    list-style: none;
+    padding: 0px;
+  }
+}
+
+.speech--sidebar-avatar {
+  margin: 10px;
+
+  img {
+    width: 100px;
+  }
+}
+
+.speech--sidebar-link {
+  font-size: 0.75em;
+  margin-left: 10px;
+  text-decoration: underline;
+}

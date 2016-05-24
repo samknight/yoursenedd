@@ -1,0 +1,20 @@
+<div class="debate-header">
+  <header>
+    <h1 class="debate-header--title"><%= properties[:name] %></h1>
+    <p class="debate-header--date"><%= properties[:date] %></p>
+  </header>
+
+  <div class="debate-header--speakers">
+    <p class="debate-header--speakers--number">
+      <%= "#{ properties[:number_of_speeches] } speeches by…" %>
+    </p>
+    <ul class="debate-header--speakers--list clearfix">
+      <% properties[:speakers].each do |speaker| %>
+        <li class="debate-header--speakers--list--speaker">
+          <%= link_to image_tag(speaker[:image], alt: speaker[:name]), "##{speaker[:first_speech_id] }", title: speaker[:name] %>
+        </li>
+      <% end %>
+    </ul>
+    <%= link_to "…and #{properties[:speakers].size - 10} more", "#", :id => "show-speakers" if properties[:speakers].size > 10 %>
+  </div>
+</div>

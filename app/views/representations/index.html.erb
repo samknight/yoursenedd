@@ -1,0 +1,7 @@
+<% @representations.each do |r| %>
+  <p>
+    <%= link_to edit_representation_path(r) do %>
+      <%= r.member.name %> represents <%= r.constituency.name %>: <%= r.log_date %> - <%= r.end_log_date %>
+    <% end %>
+  </p>
+<% end %>
