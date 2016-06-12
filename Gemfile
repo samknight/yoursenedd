@@ -16,8 +16,6 @@ gem 'jquery-rails'
 gem 'mountain_view'
 
 gem 'json'
-gem 'paperclip'
-gem 'nokogiri'
 gem 'devise'
 
 gem 'exception_notification'

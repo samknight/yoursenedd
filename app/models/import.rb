@@ -68,12 +68,13 @@ class Import
   def save_debates
     debates.each do |agenda_id, speeches|
       name = speeches.first.agenda_item_english rescue nil
+      puts speeches.first.agenda_item_english
       if name
         debate = Debate.new(
           name: speeches.first.agenda_item_english,
           name_cy: speeches.first.agenda_item_welsh,
           log_date: @date.to_date,
-          tv: speeches.first.contribution_spoken_seneddtv.match(/tv\/.{2}\/(\d+)\?/)[1]
+          tv: (speeches.first.contribution_spoken_seneddtv.match(/tv\/.{2}\/(\d+)\?/)[1] rescue '')
         )
         save_debate_speeches(debate, speeches)
       end
@@ -93,7 +94,8 @@ class Import
         content_cy += welsh_speech(speeches[i])
         i += 1
       end
-
+      puts speech.member_id
+      puts content
       debate.speeches.build(
         :member_id => find_member(speech.member_id),
         :log_date => @date.to_date,

@@ -3,8 +3,8 @@ class Members::SpeechesController < ApplicationController
   before_filter :authorize_call
   before_filter :cors_set_access_control_headers
   rescue_from 'ActiveRecord::RecordNotFound' do |exception|
-   render json: 'Unauthorized', status: 401
- end
+  render json: 'Unauthorized', status: 401
+  end
 
   def index
     @member = Member.find_by!(id: params[:member_id])
