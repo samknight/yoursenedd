@@ -68,7 +68,6 @@ class Import
   def save_debates
     debates.each do |agenda_id, speeches|
       name = speeches.first.agenda_item_english rescue nil
-      puts speeches.first.agenda_item_english
       if name
         debate = Debate.new(
           name: speeches.first.agenda_item_english,
