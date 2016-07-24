@@ -1,5 +1,6 @@
 YourSenedd::Application.routes.draw do
 
+
   namespace :members do
   get 'speeches/index'
   end
@@ -16,6 +17,7 @@ YourSenedd::Application.routes.draw do
   root :to => "dashboard#index"
 
   resources :debates, only: [:index, :show]
+  resources :videos, only: [:show]
   resources :pending_debates, only: [:index, :create]
   resources :members, only: [:show, :index, :edit, :update]
   resources :representations

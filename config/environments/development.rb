@@ -1,6 +1,8 @@
 YourSenedd::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
   Rails.application.routes.default_url_options[:host] = 'localhost:3001'
+  Refile.secret_key = ENV['REFILE_SECRET']
+
 
   # In the development environment your application's code is reloaded on
   # every request.  This slows down response time but is perfect for development

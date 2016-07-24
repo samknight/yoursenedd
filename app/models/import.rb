@@ -73,7 +73,8 @@ class Import
           name: speeches.first.agenda_item_english,
           name_cy: speeches.first.agenda_item_welsh,
           log_date: @date.to_date,
-          tv: (speeches.first.contribution_spoken_seneddtv.match(/tv\/.{2}\/(\d+)\?/)[1] rescue '')
+          tv: video_code(speeches.first.contribution_spoken_seneddtv.match(/tv\/.{2}\/(\d+)\?/)[1], "en"),
+          tv_cy: video_code(speeches.first.contribution_spoken_seneddtv.match(/tv\/.{2}\/(\d+)\?/)[1], "cy")
         )
         save_debate_speeches(debate, speeches)
       end
@@ -93,14 +94,13 @@ class Import
         content_cy += welsh_speech(speeches[i])
         i += 1
       end
-      puts speech.member_id
-      puts content
+
       debate.speeches.build(
-        :member_id => find_member(speech.member_id),
-        :log_date => @date.to_date,
-        :content => content,
-        :content_cy => content_cy,
-        tv: (speech.contribution_spoken_seneddtv.match(/\?startPos\=(\d+)\&/)[1] rescue nil)
+        member_id: find_member(speech.member_id),
+        log_date: @date.to_date,
+        content: content,
+        content_cy: content_cy,
+        spoke_at: speech.contributiontime
       )
     end
     debate.save
@@ -119,6 +119,19 @@ class Import
       speech.contribution_translated rescue speech.contribution_verbatim
     else
       speech.contribution_verbatim
+    end
+  end
+
+  def video_code(code = "", locale = "en")
+    return nil if code.empty?
+    if locale == "en"
+      res = Net::HTTP.get_response(URI("http://www.senedd.tv/en/#{ code }"))
+      puts res['location']
+      res['location'].split('/').last
+    else
+      res = Net::HTTP.get_response(URI("http://www.senedd.tv/cy/#{ code }"))
+      puts res['location']
+      res['location'].split('/').last
     end
   end
 

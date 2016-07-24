@@ -1,0 +1,5 @@
+<div id="video-container">
+  <iframe src='<%= "http://player.nafw.cloud.vualto.com/Player/Index/#{ code }?inPointUTC=#{ URI.encode(timestamp.to_s.split('UTC').first) }&autostart=#{ autostart }&captionsOn=#{ captions }" %>' class="video-player" name="NAFW Player" seamless="seamless" allowfullscreen>
+  </iframe>
+  <%= link_to 'close', '#', class: 'close-video' %>
+</div>

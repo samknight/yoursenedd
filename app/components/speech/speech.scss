@@ -14,7 +14,7 @@
 .speech--content {
   float: left;
   padding: 10px;
-  width: 75%;
+  width: 65%;
 }
 
 .speech--content-header {
@@ -52,4 +52,23 @@
   font-size: 0.75em;
   margin-left: 10px;
   text-decoration: underline;
+}
+
+
+@media only screen and (max-width: 800px) {
+
+  .speech--sidebar {
+    float: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+  }
+
+  .speech--sidebar-avatar {
+    display: none;
+  }
+
+  .speech--sidebar input {
+    display: none;
+  }
 }

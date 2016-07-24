@@ -10,14 +10,25 @@
     display:none;
   }
 
+  .subscribe_alert {
+    display: none;
+  }
+
+  .video-page {
+    .video {
+      width: 460px;
+      height: 280px;
+    }
+  }
+
 	body {
 		background: #fff;
 	}
-  
+
   #feature {
     display:none;
   }
-  
+
   #recent-debates, #main, .container, #footer, article#members, #member-profile, #member-timeline, #debate {
 		box-shadow: none !important;
     width: 96% !important;

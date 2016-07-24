@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160521103627) do
+ActiveRecord::Schema.define(version: 20160724180927) do
 
   create_table "api_keys", force: :cascade do |t|
     t.string   "uuid",       limit: 255
@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 20160521103627) do
     t.string   "slug",       limit: 255
     t.string   "tv",         limit: 255
     t.string   "name_cy",    limit: 255
+    t.string   "tv_cy",      limit: 255
   end
 
   create_table "members", force: :cascade do |t|
@@ -102,6 +103,7 @@ ActiveRecord::Schema.define(version: 20160521103627) do
     t.date     "log_date"
     t.text     "content_cy", limit: 65535
     t.string   "tv",         limit: 255
+    t.datetime "spoke_at"
   end
 
   create_table "users", force: :cascade do |t|

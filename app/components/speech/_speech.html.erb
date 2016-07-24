@@ -2,7 +2,12 @@
 	<div class="speech--sidebar">
 		<ul>
 			<li><%= link_to image_tag(properties[:avatar]), properties[:member_link], :class => "speech--sidebar-avatar" %></li>
-	  	<li><%= link_to 'Link to this', properties[:speech_link], class: 'speech--sidebar-link' %></li>
+			<li><%= link_to 'Link to this text', properties[:speech_link], class: 'speech--sidebar-link' %></li>
+			<li><input type="text" value="http://yoursenedd.wales<%= properties[:speech_link] %>" readonly /></li>
+			<% if properties[:video_link] %>
+				<li><%= link_to 'Play video link', properties[:video_link], class: 'speech--sidebar-link', remote: true %></li>
+				<li><input type="text" value="http://yoursenedd.wales<%= properties[:video_link]%>" readonly /></li>
+			<% end %>
 		</ul>
 	</div>
 	<div class="speech--content">

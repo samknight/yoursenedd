@@ -1,0 +1,1 @@
+$("#video-widget").html("<%= escape_javascript(render partial: 'application/video', locals: { code: params[:id], timestamp: params[:timestamp], autostart: params[:autostart], captions: params[:captions] } ) %>");

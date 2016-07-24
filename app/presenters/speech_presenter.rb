@@ -10,7 +10,8 @@ class SpeechPresenter < ApplicationPresenter
       body: content,
       slug: slug,
       member_link: member_path(member.to_param),
-      speech_link: speech_link
+      speech_link: speech_link,
+      video_link: video_link
     }
   end
 
@@ -22,5 +23,11 @@ class SpeechPresenter < ApplicationPresenter
 
   def speech_link
     debate_path(debate) + "##{ id }"
+  end
+
+  def video_link
+    unless debate.tv.blank?
+      video_path(debate.tv, timestamp: speech.spoke_at.utc.to_s.split("UTC").first)
+    end
   end
 end
