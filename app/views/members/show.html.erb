@@ -1,10 +1,10 @@
-<% title "#{ @member.name } | Your Senedd" %>
+<% title "#{ @member.name } | #{ t('your_senedd') }" %>
 
 <article id="member" class="clearfix">
   <aside id="member-profile" class="clearfix">
     <h1><%= @member.name %></h1>
     <%= image_tag attachment_url(@member, :photo, :fill, 150, 150, format: "jpg") || 'silhouette.jpg' %>
   	<p class="party"><%= @member.party.name if @member.party %></p>
-  	<p class="party"><%= @member.constituency.name if @member.constituency && @member.current? %></p>
+  	<p class="party"><%= locale_method(@member.constituency.name, @member.constituency.name_cy) if @member.constituency && @member.current? %></p>
   </aside>
 </article>

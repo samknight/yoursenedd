@@ -1,4 +1,4 @@
-<% title "#{@debate.name} – #{@debate.log_date} | Your Senedd" %>
+<% title "#{ locale_method(@debate.name, @debate.name_cy) } – #{@debate.log_date} | Your Senedd" %>
 
 <article id="debate">
   <%= render_component 'debate_header', DebateHeaderPresenter.new(@debate).properties %>

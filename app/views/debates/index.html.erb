@@ -1,13 +1,13 @@
-<% title "Recent debates from the Welsh Assembly | Your Senedd" %>
+<% title "#{ t('.debates') } | #{ t('your_senedd') }" %>
 
 <section id="debates">
-  <h1>Recent Debates</h1>
+  <h1><%= t('.debates') %></h1>
   <% @debates_days.each do |day, debates| %>
     <div id="<%= day.to_s %>" class="debate">
-      <h2><%= day.to_s(:long) %></h2>
+      <h2><%= I18n.l day, format: :long %></h2>
       <ul>
       <% debates.each do |debate| %>
-        <li><%= link_to debate.name, debate %></li>
+        <li><%= link_to locale_method(locale_method(debate.name, debate.name_cy), debate.name_cy), debate %></li>
       <% end %>
       </ul>
     </div>

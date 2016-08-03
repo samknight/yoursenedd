@@ -1,27 +1,27 @@
-<% title "Your Senedd | The Home of Welsh Politics" %>
+<% title t('your_senedd') %>
 
 <section id="recent-debates">
-  <h1><%= link_to 'Recent Debates', debates_path %></h1>
+  <h1><%= link_to t('.recent_debates'), debates_path %></h1>
   <% @debates_days.sort.last(3).reverse!.each do |day, debates| %>
     <div class="day">
-      <h2><%= day.to_s(:long) %></h2>
+      <h2><%= I18n.l day, format: :long %></h2>
       <ul>
         <% debates.take(3).each do |debate| %>
-          <li><%= link_to debate.name, debate %></li>
+          <li><%= link_to locale_method(debate.name, debate.name_cy), debate %></li>
         <% end %>
       </ul>
-      <%= link_to "More from #{day.to_s(:short)} &rarr;".html_safe, debates_path + "##{day.to_s}", :class => "more" if debates.size > 5 %>
+      <%= link_to t('.more_from', date: l(day, format: :short)).html_safe, debates_path + "##{day.to_s}", :class => "more" if debates.size > 5 %>
     </div>
   <% end %>
 </section>
 
 <div id="feature">
-  <h1>Current AMs</h1>
+  <h1><%= t('.current_ams') %></h1>
   <ul>
     <% @members.each do |member| %>
       <li>
         <%= link_to member.name, member_path(member) %>
-        <span class="constituency"><%= member.constituency.name %></span>
+        <span class="constituency"><%= locale_method(member.constituency.name, member.constituency.name_cy) %></span>
       </li>
     <% end %>
     <li>

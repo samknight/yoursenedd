@@ -6,7 +6,7 @@
 
   <div class="debate-header--speakers">
     <p class="debate-header--speakers--number">
-      <%= "#{ properties[:number_of_speeches] } speeches by…" %>
+      <%= t('.speeches_by', number: properties[:number_of_speeches]) %>
     </p>
     <ul class="debate-header--speakers--list clearfix">
       <% properties[:speakers].each do |speaker| %>
@@ -15,6 +15,6 @@
         </li>
       <% end %>
     </ul>
-    <%= link_to "…and #{properties[:speakers].size - 10} more", "#", :id => "show-speakers" if properties[:speakers].size > 10 %>
+    <%= link_to t(".more_speakers", number: properties[:speakers].size - 10), "#", :id => "show-speakers" if properties[:speakers].size > 10 %>
   </div>
 </div>

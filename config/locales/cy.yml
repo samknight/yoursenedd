@@ -1,0 +1,34 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+cy:
+  your_senedd: Eich Senedd
+  debate_header:
+    debate_header:
+      more_speakers: …a %{number} mwy o siaradwyr
+      speeches_by: "%{number} areithiau gan…"
+  speech:
+    speech:
+      link_to_text: cyswllt i testun
+      link_to_video: cyswllt i fideo
+  menu:
+    members: Aelodau
+    debates: Dadleuon
+    advertise: Hysbysebu
+    bespoke_data: Data gwasanaethau
+  layouts:
+    application:
+      enter_to_search: "&ldquo;Pwysiwch&rdquo; i cwilio"
+      search_for: Dw i'n eisiau chwilio am
+      example_search: e.g. economi, seilwaith
+  dashboard:
+    index:
+      more_from: Mwy o %{date} &rarr;
+      current_ams: AS cyfredol
+      recent_debates: Dadleuon Diweddar
+  members:
+    index:
+      current_ams: AS cyfredol
+  debates:
+    index:
+      debates: Dadleuon

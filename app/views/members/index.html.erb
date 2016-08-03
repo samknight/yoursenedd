@@ -1,11 +1,11 @@
-<% title "Elected Assembly Members | Your Senedd" %>
+<% title "#{ t('.current_ams') } | #{ t('your_senedd') }" %>
 
 <section id="debates">
-  <h1>Elected Assembly Members</h1>
+  <h1><%= t('.current_ams') %></h1>
   <table>
     <% @members.each do |member| %>
       <tr class="<%= cycle('odd', 'even') %>">
-        <td><b><%= member.constituency.name %></b></td>
+        <td><b><%= locale_method(member.constituency.name, member.constituency.name_cy) %></b></td>
         <td><%= link_to member.name, member_path(member.to_param) %></td>
       </tr>
     <% end %>

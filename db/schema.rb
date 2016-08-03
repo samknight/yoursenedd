@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160724180927) do
+ActiveRecord::Schema.define(version: 20160804192417) do
 
   create_table "api_keys", force: :cascade do |t|
     t.string   "uuid",       limit: 255
@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 20160724180927) do
     t.datetime "updated_at"
     t.date     "start_date"
     t.date     "end_date"
+    t.string   "name_cy",    limit: 255
   end
 
   create_table "debates", force: :cascade do |t|

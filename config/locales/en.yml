@@ -2,4 +2,33 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  hello: "Hello world"
+  your_senedd: Your Senedd
+  debate_header:
+    debate_header:
+      more_speakers: …and %{number} more speakers
+      speeches_by: "%{number} speeches by…"
+  speech:
+    speech:
+      link_to_text: Link to text
+      link_to_video: Link to video
+  menu:
+    members: Members
+    debates: Debates
+    advertise: Advertise
+    bespoke_data: Data services
+  layouts:
+    application:
+      enter_to_search: Hit &ldquo;Enter&rdquo; to search
+      search_for: I want to search for
+      example_search: e.g. economy, transport
+  dashboard:
+    index:
+      more_from: More from %{date}
+      current_ams: Current AMs
+      recent_debates: Recent Debates
+  members:
+    index:
+      current_ams: Current AMs
+  debates:
+    index:
+      debates: Debates

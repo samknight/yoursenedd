@@ -23,29 +23,31 @@
         <nav class="clearfix" id="main-nav">
           <ul class="clearfix">
             <li>
-              <%= link_to 'Members', members_path %>
+              <%= link_to t('menu.members'), members_path %>
             </li>
             <li>
-              <%= link_to 'Debates', debates_path %>
+              <%= link_to t('menu.debates'), debates_path %>
             </li>
-            <li>
-              <%= link_to 'Advertise', advertising_path %>
-            </li>
-            <li>
-              <%= link_to 'Bespoke Data', message_path %>
-            </li>
+            <% if I18n.locale == :en %>
+              <li>
+                <%= link_to t('menu.advertise'), advertising_path %>
+              </li>
+              <li>
+                <%= link_to t('menu.bespoke_data'), message_path %>
+              </li>
+            <% end %>
           </ul>
         </nav>
       </div>
     </div>
-    <%= render 'application/subscribe_alert' %>
+    <%= render 'application/subscribe_alert' if I18n.locale == :en %>
     <% if current_page?(root_url) %>
       <section id="strip">
         <div id="search">
-          <h1>I want to search for</h1>
+          <h1><%= t('.search_for') %></h1>
           <%= form_tag(search_index_path, :method => 'get') do |f| %>
-            <%= text_field_tag :q, nil, { :placeholder => 'e.g. economy, transport' } %>
-            <span class="tip">Hit &ldquo;Enter&rdquo; to search</span>
+            <%= text_field_tag :q, nil, { :placeholder => t('.example_search') } %>
+            <span class="tip"><%= t('.enter_to_search').html_safe %></span>
           <% end %>
         </div>
       </section>
@@ -59,7 +61,7 @@
     <footer id="footer">
       <div class="container">
         <div>
-          <span class="tagline">Your Senedd | The Home of Welsh Politics</span>
+          <span class="tagline"><%= t('your_senedd') %></span>
         </div>
       </div>
     </footer>
