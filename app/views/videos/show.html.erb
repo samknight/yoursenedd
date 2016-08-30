@@ -2,7 +2,7 @@
   <div class="video-page">
     <div class="video">
       <img class="placeholder" src="http://placehold.it/16x9"/>
-      <iframe src='<%= "http://player.nafw.cloud.vualto.com/Player/Index/#{ params[:id] }?inPointUTC=#{ URI.encode(params[:timestamp]) }&autostart=false&captionsOn=true" %>' class="video-player" name="NAFW Player" seamless="seamless" allowfullscreen>Loading video…</iframe>
+      <iframe src='<%= "http://player.nafw.cloud.vualto.com/Player/Index/#{ params[:id] }?inPointUTC=#{ URI.encode(@speech.spoke_at.to_s) }&autostart=false&captionsOn=true" %>' class="video-player" name="NAFW Player" seamless="seamless" allowfullscreen>Loading video…</iframe>
     </div>
     <%= link_to 'Read transcript', debate_path(@speech.debate) + "##{@speech.id}" %>
   </div>
