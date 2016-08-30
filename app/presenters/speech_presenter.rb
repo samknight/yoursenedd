@@ -10,6 +10,7 @@ class SpeechPresenter < ApplicationPresenter
       body: locale_content,
       member_link: member_path(member.to_param),
       speech_link: speech_link,
+      video_path: video_link_path,
       video_link: video_link
     }
   end
@@ -20,11 +21,19 @@ class SpeechPresenter < ApplicationPresenter
     debate_url(debate) + "##{ id }"
   end
 
+  def video_link_path
+    if I18n.locale == :cy && !debate.tv_cy.blank?
+      video_path(debate.tv_cy, timestamp: speech.spoke_at.utc.to_s.split("UTC").first)
+    elsif !debate.tv.blank?
+      video_path(debate.tv, timestamp: speech.spoke_at.utc.to_s.split("UTC").first)
+    end
+  end
+
   def video_link
     if I18n.locale == :cy && !debate.tv_cy.blank?
       video_url(debate.tv_cy, timestamp: speech.spoke_at.utc.to_s.split("UTC").first)
     elsif !debate.tv.blank?
-      content
+      video_url(debate.tv, timestamp: speech.spoke_at.utc.to_s.split("UTC").first)
     end
   end
 

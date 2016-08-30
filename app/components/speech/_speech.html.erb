@@ -5,7 +5,7 @@
 			<li><%= link_to t('.link_to_text'), properties[:speech_link], class: 'speech--sidebar-link' %></li>
 			<li><input type="text" value="<%= properties[:speech_link] %>" readonly /></li>
 			<% if properties[:video_link] %>
-				<li><%= link_to t('.link_to_video'), properties[:video_link], class: 'speech--sidebar-link', remote: true %></li>
+				<li><%= link_to t('.link_to_video'), properties[:video_path], class: 'speech--sidebar-link', remote: true %></li>
 				<li><input type="text" value="<%= properties[:video_link]%>" readonly /></li>
 			<% end %>
 		</ul>
