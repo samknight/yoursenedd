@@ -1,7 +1,7 @@
 class VideosController < ApplicationController
 
   def show
-    day = Debate.find_by(tv: params[:id]).log_date
+    day = find_day(params[:id])
     @speech = find_speech(day, params[:timestamp])
   end
 
@@ -9,6 +9,14 @@ class VideosController < ApplicationController
 
   def video_params
     params.permit(:id, :timestamp, :autostart, :captions)
+  end
+
+  def find_day(code)
+    if I18n.locale == :en
+      Debate.find_by(tv: code).log_date
+    else
+      Debate.find_by(tv_cy: code).log_date
+    end
   end
 
   def find_speech(day, timestamp = nil)

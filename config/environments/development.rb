@@ -1,6 +1,5 @@
 YourSenedd::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
-  Rails.application.routes.default_url_options[:host] = 'localhost:3001'
   Refile.secret_key = ENV['REFILE_SECRET']
 
 

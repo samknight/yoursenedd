@@ -1,6 +1,5 @@
 YourSenedd::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
-  Rails.application.routes.default_url_options[:host] = ENV['DEFAULT_HOST']
 
   ActionMailer::Base.smtp_settings = {
     :user_name => ENV['SENDGRID_USERNAME'],

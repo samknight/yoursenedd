@@ -2,12 +2,13 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
 
   before_action :set_locale
-  before_action :cors_set_access_control_headers
+  # before_action :cors_set_access_control_headers
 
   protected
 
   def set_locale
     domain = request.host.split('.').last
+    Rails.application.routes.default_url_options[:host] = request.host_with_port
     if domain == "cymru"
       I18n.locale = :cy
     else
