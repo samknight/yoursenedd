@@ -5,7 +5,7 @@ class SpeechPresenter < ApplicationPresenter
   def properties
     {
       id: id,
-      avatar: attachment_url(member, :photo, :fill, 200, 200, format: "jpg") || 'silhouette.jpg',
+      avatar: attachment_url(member, :photo, :fit, 200, 200, format: "jpg") || 'silhouette.jpg',
       name: member.name,
       body: locale_content,
       member_link: member_path(member.to_param),

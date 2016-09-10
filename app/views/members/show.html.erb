@@ -3,7 +3,7 @@
 <article id="member" class="clearfix">
   <aside id="member-profile" class="clearfix">
     <h1><%= @member.name %></h1>
-    <%= image_tag attachment_url(@member, :photo, :fill, 150, 150, format: "jpg") || 'silhouette.jpg' %>
+    <%= image_tag attachment_url(@member, :photo, :fit, 150, 150, format: "jpg") || 'silhouette.jpg' %>
   	<p class="party"><%= @member.party.name if @member.party %></p>
   	<p class="party"><%= locale_method(@member.constituency.name, @member.constituency.name_cy) if @member.constituency && @member.current? %></p>
   </aside>
