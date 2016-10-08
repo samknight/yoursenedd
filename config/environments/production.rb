@@ -31,6 +31,8 @@ YourSenedd::Application.configure do
   Refile.cdn_host = ENV['CDN_HOST']
 
 
+  config.force_ssl = true
+
   # Code is not reloaded between requests.
   config.cache_classes = true
 
