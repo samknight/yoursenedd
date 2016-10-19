@@ -94,13 +94,13 @@ class Import
         content_cy += welsh_speech(speeches[i])
         i += 1
       end
-
+      date = speech.contributiontime rescue nil
       debate.speeches.build(
         member_id: find_member(speech.member_id),
         log_date: @date.to_date,
         content: content,
         content_cy: content_cy,
-        spoke_at: speech.contributiontime
+        spoke_at: date ? DateTime.parse(date) : nil
       )
     end
     debate.save
@@ -126,11 +126,9 @@ class Import
     return nil if code.empty?
     if locale == "en"
       res = Net::HTTP.get_response(URI("http://www.senedd.tv/en/#{ code }"))
-      puts res['location']
       res['location'].split('/').last
     else
       res = Net::HTTP.get_response(URI("http://www.senedd.tv/cy/#{ code }"))
-      puts res['location']
       res['location'].split('/').last
     end
   end

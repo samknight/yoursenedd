@@ -22,18 +22,26 @@ class SpeechPresenter < ApplicationPresenter
   end
 
   def video_link_path
-    if I18n.locale == :cy && !debate.tv_cy.blank?
-      video_path(debate.tv_cy, timestamp: speech.spoke_at.utc.to_s.split("UTC").first)
-    elsif !debate.tv.blank?
-      video_path(debate.tv, timestamp: speech.spoke_at.utc.to_s.split("UTC").first)
+    if speech.spoke_at
+      if I18n.locale == :cy && !debate.tv_cy.blank?
+        video_path(debate.tv_cy, timestamp: speech.spoke_at.utc.to_s.split("UTC").first)
+      elsif !debate.tv.blank?
+        video_path(debate.tv, timestamp: speech.spoke_at.utc.to_s.split("UTC").first)
+      end
+    else
+      '#'
     end
   end
 
   def video_link
-    if I18n.locale == :cy && !debate.tv_cy.blank?
-      video_url(debate.tv_cy, timestamp: speech.spoke_at.utc.to_s.split("UTC").first)
-    elsif !debate.tv.blank?
-      video_url(debate.tv, timestamp: speech.spoke_at.utc.to_s.split("UTC").first)
+    if speech.spoke_at
+      if I18n.locale == :cy && !debate.tv_cy.blank?
+        video_url(debate.tv_cy, timestamp: speech.spoke_at.utc.to_s.split("UTC").first)
+      elsif !debate.tv.blank?
+        video_url(debate.tv, timestamp: speech.spoke_at.utc.to_s.split("UTC").first)
+      end
+    else
+      '#'
     end
   end
 
