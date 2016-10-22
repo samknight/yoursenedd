@@ -1,5 +1,5 @@
-<script src="http://www.google.com/jsapi" type="text/javascript"></script>
-<script type="text/javascript"> 
+<script src="//www.google.com/jsapi" type="text/javascript"></script>
+<script type="text/javascript">
   google.load('search', '1', {language : 'en'});
   google.setOnLoadCallback(function() {
     var customSearchControl = new google.search.CustomSearchControl(
@@ -7,13 +7,13 @@
 
     customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
     var options = new google.search.DrawOptions();
-    options.enableSearchboxOnly("http://yoursenedd.com/search");
+    options.enableSearchboxOnly("//yoursenedd.com/search");
     customSearchControl.draw('cse-search-form', options);
   }, true);
-  
+
   $(document).ready(function(){
     $("#search input[type=text]").css("background", "none");
     $("#search input").attr("style", "none");  //.attr("placeholder", "e.g. Economy, Transport");
   });
 </script>
-<link rel="stylesheet" href="http://www.google.com/cse/style/look/default.css" type="text/css" />
+<link rel="stylesheet" href="//www.google.com/cse/style/look/default.css" type="text/css" />
