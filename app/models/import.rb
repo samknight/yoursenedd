@@ -72,9 +72,9 @@ class Import
         debate = Debate.new(
           name: speeches.first.agenda_item_english,
           name_cy: speeches.first.agenda_item_welsh,
-          log_date: @date.to_date,
-          tv: video_code(speeches.first.contribution_spoken_seneddtv.match(/tv\/.{2}\/(\d+)\?/)[1], "en"),
-          tv_cy: video_code(speeches.first.contribution_spoken_seneddtv.match(/tv\/.{2}\/(\d+)\?/)[1], "cy")
+          log_date: @date.to_date
+          # tv: video_code(speeches.first.contribution_spoken_seneddtv.match(/tv\/.{2}\/(\d+)\?/)[1], "en"),
+          # tv_cy: video_code(speeches.first.contribution_spoken_seneddtv.match(/tv\/.{2}\/(\d+)\?/)[1], "cy")
         )
         save_debate_speeches(debate, speeches)
       end
@@ -115,7 +115,7 @@ class Import
   end
 
   def welsh_speech(speech)
-    if speech.contribution_language == "En"
+    if speech.contribution_language != "En"
       speech.contribution_translated rescue speech.contribution_verbatim
     else
       speech.contribution_verbatim
